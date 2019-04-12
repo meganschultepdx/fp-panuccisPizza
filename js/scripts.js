@@ -30,15 +30,25 @@ PizzaPrice.prototype.additionalToppingsPrice = function(){
 }
 
 // UI additionalToppingsPrice
-$(document).ready(function()) {
-  $("#pizzaForm").submit(function(event)) {
+$(document).ready(function() {
+  $("#pizzaForm").submit(function(event) {
     event.preventDfault();
+    console.log("hi")
 
     var pizzaSizeSelection = $("#pizzaSize").val();
-    var baseToppingsSelection = $("#baseToppings").val();
+    var baseToppingSelection = $("#baseTopping").val();
     var additionalToppingsSelection = [];
-  }
-}
+    additionalToppingsSelection.push($( "input[type=checkbox][name=bar]:checked").val());
+    // $( "input").val([ "check1", "check2", "radio1" ]);
+
+    var pizzaSelection = new PizzaPrice(pizzaSizeSelection, baseToppingSelection, additionalToppingsSelection);
+
+    var sizePrice = pizzaPriceSelection.pizzaSizePrice();
+    var baseToppingPrice = pizzaSelection.baseToppingsPrice();
+    var additionalToppingsPrice = pizzaSelection.additionalToppingsPrice(); 
+
+  });
+});
 
 
 
