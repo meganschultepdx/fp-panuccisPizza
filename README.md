@@ -11,10 +11,9 @@ This page will allow the user to choose one pizza size, one pizza base topping a
 
 ## Setup/Installation Requirements
 
-* Make a clone from GitHub at: https://github.com/meganschultepdx/fp-beepboop
+* Make a clone from GitHub at: https://github.com/meganschultepdx/fp-panuccisPizza.git
 * Open in Atom or similar text editor to view code
 * open .html file in browser for web view
-* or you can use this to view my GH-pages for this project: https://meganschultepdx.github.io/FP-beepboop
 * you can test functionality in the browser by selecting pizza size and base topping from the drop-downs and adding any additional toppings.
 * you should receive a prompt with the total cost of your pizza.
 

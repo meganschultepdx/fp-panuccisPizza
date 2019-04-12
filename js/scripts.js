@@ -4,8 +4,6 @@ function PizzaPrice(pizzaSize, baseTopping) {
   this.baseTopping = baseTopping;
   this.additionalToppings = [];
   this.price = 0;
-  this.pizzaSizePrice();
-  this.baseToppingPrice()
 }
 
 //sizePrice function
