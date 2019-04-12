@@ -12,7 +12,7 @@ PizzaPrice.prototype.pizzaSizePrice = function() {
     return 10;
   } else {
     return 14;
-  } conosole.log(pizzaSizePrice)
+  } console.log("hello")
 }
 // baseToppingPrice function
 PizzaPrice.prototype.baseToppingPrice = function() {
@@ -22,6 +22,33 @@ PizzaPrice.prototype.baseToppingPrice = function() {
     return 4;
   }
 }
+
+PizzaPrice.prototype.additionalToppingsPrice = function(){
+  if ($("input[type='checkbox']").is(":checked")){
+
+  }
+}
+
+// UI additionalToppingsPrice
+$(document).ready(function()) {
+  $("#pizzaForm").submit(function(event)) {
+    event.preventDfault();
+
+    var pizzaSizeSelection = $("#pizzaSize").val();
+    var baseToppingsSelection = $("#baseToppings").val();
+    var additionalToppingsSelection = [];
+  }
+}
+
+
+
+
+
+
+
+
+
+
 // }
 // places.prototype.totalInfo = function() {
 // return "<li>" + "Country: " + this.country + "</li>" + "<li>" + "Landmark: " + this.landmark + "</li>" + "<li>" + "Activity: " + this.activity + "</li>";
