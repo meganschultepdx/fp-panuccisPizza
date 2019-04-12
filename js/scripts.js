@@ -4,6 +4,8 @@ function PizzaPrice(pizzaSize, baseTopping) {
   this.baseTopping = baseTopping;
   this.additionalToppings = [];
   this.price = 0;
+  this.pizzaSizePrice();
+  this.baseToppingPrice()
 }
 
 //sizePrice function
@@ -28,23 +30,23 @@ $(document).ready(function() {
   $("#pizzaForm").submit(function(event) {
     event.preventDefault();
 
-    var pizzaSizeSelection = $("#pizzaSize").val();
-    var baseToppingSelection = $("#baseTopping").val();
-    var additionalToppingsSelection = [];
+    var pizzaSize = $("#pizzaSize").val();
+    var baseTopping = $("#baseTopping").val();
+    var additionalToppings = [];
     $("#additionaToppings input:checked").each(function(){
-        additionalToppingsSelection.push($(this).val());
-      }); 
-    var pizzaSelection = new PizzaPrice(pizzaSizeSelection, baseToppingSelection, additionalToppingsSelection);
+        additionalToppings.push($(this).val());
+      });
+    var pizzaSelection = new PizzaPrice(pizzaSize, baseTopping, additionalToppings);
 
     var sizePrice = pizzaSelection.pizzaSizePrice();
     var baseToppingPrice = pizzaSelection.baseToppingPrice();
-    var additionalToppingsPrice = additionalToppingsSelection.length;
+    var additionalToppingsPrice = additionalToppings.length;
     var pizzaTotalPrice = sizePrice + baseToppingPrice + additionalToppingsPrice;
 
 // displays user input/selections and final price
     $("#finalSize").html($("#pizzaSize").val());
     $("#finalBase").html($("#baseTopping").val());
-    $("#finalAdditionalToppings").append(additionalToppingsSelection.join(", "));
+    $("#finalAdditionalToppings").append(additionalToppings.join(", "));
     $("#totalPrice").html(this.pizzaFinalPrice);
     $("#totalPriceMessage").fadeIn();
   });
