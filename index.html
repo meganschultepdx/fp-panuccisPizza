@@ -14,7 +14,42 @@
     <img src="" alt="">
     <h2>The Best Pizza in Old New York</h2>
     <form id="pizzaForm">
-
+      <div id="orderForm">
+        <div class="card" style="width: 18rem;">
+          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-body">
+            <h3 class="card-title">Choose a Pizza Size:</h3>
+            <select class="form-control" id="pizzaSize">
+              <option value="small">12" pizza -$10 base price (good for one or two people)</option>
+              <option value="large">16" pizza -$14 base price (good for 2-3 people)</option>
+            </select>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div class="card-body">
+            <h3 class="card-title">Choose a Base Topping:</h3>
+            <select class="form-control" id="baseTopping">
+              <option value="cheese">Cheese -no additional cost</option>
+              <option value="pepperoni">Pepperoni -$4 additional cost</option>
+              <option value="sausage">Sausage -$4 additional cost</option>
+            </select>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+          <div id="additionalToppings" class="card-body">
+            <h3>Choose any additional Toppings -$1 each</h3>
+            <input type="checkbox" name="additionalTopping" value="artichokes"> Artichokes<br>
+            <input type="checkbox" name="additionalTopping" value="garlic"> Roasted Garlic<br>
+            <input type="checkbox" name="additionalTopping" value="basil"> Fresh Basil (added after)<br>
+            <input type="checkbox" name="additionalTopping" value="mushrooms"> Mushrooms<br>
+            <input type="checkbox" name="additionalTopping" value="onions"> Onions<br>
+            <input type="checkbox" name="additionalTopping" value="olives"> Black Olives<br>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-dark">Get Total</button>
     </form>
 
   </body>
