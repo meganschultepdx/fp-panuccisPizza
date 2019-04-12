@@ -1,5 +1,5 @@
 // Busines Logic
-function PizzaPrice(sizePrice, baseToppingPrice) {
+function PizzaPrice(pizzaSize, baseTopping) {
   this.pizzaSize = pizzaSize;
   this.baseTopping = baseTopping;
   this.additionalToppings = [];
@@ -12,7 +12,7 @@ PizzaPrice.prototype.pizzaSizePrice = function() {
     return 10;
   } else {
     return 14;
-  } console.log("hello")
+  } console.log(pizzaSizePrice)
 }
 // baseToppingPrice function
 PizzaPrice.prototype.baseToppingPrice = function() {
@@ -20,36 +20,26 @@ PizzaPrice.prototype.baseToppingPrice = function() {
     return 0;
   } else {
     return 4;
-  }
+  } console.log(baseToppingPrice)
 }
-// // additional toppings function
-// PizzaPrice.prototype.additionalToppingsPrice = function() {
-//   var additionalToppingsPrice = additionalToppingsSelection.length;
-// }
 
-// total pizza price funcion
-// PizzaPrice.prototype.pizzaTotalPrice = function() {
-//   return this.pizzaSizePrice + this.baseToppingsPrice + this.additionalToppingsPrice;
-// }
-
-// UI additionalToppingsPrice
+// UI Logic
 $(document).ready(function() {
   $("#pizzaForm").submit(function(event) {
     event.preventDefault();
-    console.log("hi")
-  // takes in UI input (selections)
+
     var pizzaSizeSelection = $("#pizzaSize").val();
     var baseToppingSelection = $("#baseTopping").val();
     var additionalToppingsSelection = [];
-    $("input:checkbox[name=additionalToppings]:checked").each(function(){
+    $("#additionaToppings input:checked").each(function(){
         additionalToppingsSelection.push($(this).val());
-      });
+      }); 
+    var pizzaSelection = new PizzaPrice(pizzaSizeSelection, baseToppingSelection, additionalToppingsSelection);
 
-      var pizzaSelection = new PizzaPrice(pizzaSizeSelection, baseToppingSelection, additionalToppingsSelection);
-      var sizePrice = pizzaSelection.pizzaSizePrice();
-      var baseToppingPrice = pizzaSelection.baseToppingPrice();
-      var additionalToppingsPrice = additionalToppingsSelection.length;
-      var pizzaTotalPrice = sizePrice + baseToppingPrice + additionalToppingsPrice;
+    var sizePrice = pizzaSelection.pizzaSizePrice();
+    var baseToppingPrice = pizzaSelection.baseToppingPrice();
+    var additionalToppingsPrice = additionalToppingsSelection.length;
+    var pizzaTotalPrice = sizePrice + baseToppingPrice + additionalToppingsPrice;
 
 // displays user input/selections and final price
     $("#finalSize").html($("#pizzaSize").val());
@@ -57,17 +47,5 @@ $(document).ready(function() {
     $("#finalAdditionalToppings").append(additionalToppingsSelection.join(", "));
     $("#totalPrice").html(this.pizzaFinalPrice);
     $("#totalPriceMessage").fadeIn();
-    console.log(pizzaTotalPrice)
   });
 });
-
-
-
-
-
-
-
-
-
-
-// }
