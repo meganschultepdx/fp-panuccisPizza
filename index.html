@@ -22,8 +22,8 @@
           <div class="card-body">
             <h3 class="card-title">Choose a Pizza Size:</h3>
             <select id="pizzaSize" class="form-control">
-              <option value="small">12" pizza -$10 base price (good for one or two people)</option>
-              <option value="large">16" pizza -$14 base price (good for 2-3 people)</option>
+              <option value="small">12" small pizza $10 base price (good for one or two people)</option>
+              <option value="large">16" large pizza $14 base price (good for 2-3 people)</option>
             </select>
           </div>
         </div>
@@ -34,8 +34,8 @@
             <h3 class="card-title">Choose a Base Topping:</h3>
             <select id="baseTopping" class="form-control">
               <option value="cheese">Cheese -no additional cost</option>
-              <option value="pepperoni">Pepperoni -$4 additional cost</option>
-              <option value="sausage">Sausage -$4 additional cost</option>
+              <option value="pepperoni">Pepperoni $4 additional cost</option>
+              <option value="sausage">Sausage $4 additional cost</option>
             </select>
           </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="card" style="width: 18rem;">
           <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
           <div id="additionalToppings" class="card-body">
-            <h3>Choose any additional Toppings -$1 each</h3>
+            <h3>Choose any additional Toppings $1 each</h3>
             <input type="checkbox" name="additionalToppings" value="artichokes"> Artichokes<br>
             <input type="checkbox" name="additionalToppings" value="garlic"> Roasted Garlic<br>
             <input type="checkbox" name="additionalToppings" value="basil"> Fresh Basil (added after)<br>
@@ -56,16 +56,17 @@
       <button type="submit" class="btn btn-dark">Get Total</button>
     </form>
 
-    <div id="totalPriceMessage">
-      <p>Your pizza:<br>
-        size: <span id="finalSize"></span><br>
-        base topping: <span is="finalBase"></span><br>
-        additional toppings: <span id="finalAdditionalToppings"></span><br>
-        Your total for this pizza selection is <span class="totalPrice">.<br>
+    <div class="card" style="width: 18rem;">
+      <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+      <div id="totalPriceMessage" class="card-body">
+        <h3>Your pizza:</h3><br>
+        <p><strong>size: </strong><span id="finalSize"></span><br>
+        <strong>base topping: </strong><span id="finalBase"></span><br>
+        <strong>additional toppings: </strong><span id="finalAdditionalToppings"></span><br>
+        <strong>Your total for this pizza selection is: </strong>$<span class="totalPrice">.<br>
         Click the "checkout" button to go to online ordering. </p>
-      <button type="button" class="btn btn-dark">Checkout</button>
-
+        <button type="button" class="btn btn-dark">Checkout</button>
+      </div>
     </div>
-
   </body>
 </html>
