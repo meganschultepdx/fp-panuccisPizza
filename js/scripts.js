@@ -45,7 +45,14 @@ $(document).ready(function() {
 
     var sizePrice = pizzaPriceSelection.pizzaSizePrice();
     var baseToppingPrice = pizzaSelection.baseToppingsPrice();
-    var additionalToppingsPrice = pizzaSelection.additionalToppingsPrice(); 
+    var additionalToppingsPrice = pizzaSelection.additionalToppingsPrice();
+    var pizzaTotalPrice = sizePrice + baseToppingsPrice + additionalToppingsPrice;
+
+    $("#finalSize").html(pizzaSelection.pizzaSize);
+    $("#finalBase").html(pizzaSelection.baseTopping);
+    $("#finalAdditionalToppings").append(additionalToppingsSelection.join(", "));
+    $("#totalPrice").html(pizzaTotalPrice);
+    $("#totalPriceMessage").fadeIn();
 
   });
 });
