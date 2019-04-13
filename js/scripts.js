@@ -1,44 +1,64 @@
 // Busines Logic
-function PizzaPrice(size, baseTopping, additionaToppings) {
+function PizzaPrice(size, baseTopping, additionalToppings) {
   this.size = size;
   this.baseTopping = baseTopping;
   this.additionalToppings = [];
+  this.price = 0;
+
 }
-//size Price function
+//sizePrice function
 PizzaPrice.prototype.sizePrice = function() {
   if (this.size === "small") {
-    return 10;
+    this.price += 10;
   } else {
-    return 14;
-  } console.log(pizzaSizePrice)
+    this.price += 14;
+  }   if (this.baseTopping === "cheese") {
+      this.price += 0;
+    } else {
+      this.price += 4;
+    }
+  return this.price
 }
-// baseToppingPrice function
-PizzaPrice.prototype.baseToppingPrice = function() {
-  if (this.baseTopping === "cheese") {
-    return 0;
-  } else {
-    return 4;
-  } console.log(baseToppingPrice)
-}
+// // baseToppingPrice function
+// PizzaPrice.prototype.baseToppingPrice = function() {
+//   if (this.baseTopping === "cheese") {
+//     this.price += 0;
+//   } else {
+//     this.price += 4;
+//   }
+//   return this.price
+// }
+
+//additionalToppingsPrice function
+//I left this in because I couldn't figure out the right way to do this up here and I would like to talk to you guys about it. I'm not sure how to make the value of the array I made from the inputted checked boxes register in my busines logic this.additionalToppings. I even tried changing it to this.additionalToppings = additonalToppings;
+
+// PizzaPrice.prototype.additionalToppingsPrice = function() {
+//   this.price += this.additionalToppings.length;
+// }
+// console.log(this.additionalToppingsPrice)
+
 
 // UI Logic
 $(document).ready(function() {
   $("#pizzaForm").submit(function(event) {
     event.preventDefault();
-
+  //user selection/input values
     var size = $("#size").val();
     var baseTopping = $("#baseTopping").val();
     var additionalToppings = [];
     $('.additional input:checked').each(function() {
       additionalToppings.push($(this).val());
-    }); console.log(additionalToppings)
+    }); //console.log(additionalToppings)
+  //new pizza variable
+    var finalSelection = new PizzaPrice(size, baseTopping, additionalToppings);
 
-    var pizzaSelection = new PizzaPrice(size, baseTopping, additionalToppings);
+    var pizzaTotalPrice = this.price + additionalToppings.length;
 
-    var sizePrice = pizzaSelection.sizePrice();
-    var baseToppingPrice = pizzaSelection.baseToppingPrice();
+    var sizePrice = finalSelection.sizePrice();
+    // var baseToppingPrice = finalSelection.baseToppingPrice();
     var additionalToppingsPrice = additionalToppings.length;
-    var pizzaTotalPrice = sizePrice + baseToppingPrice + additionalToppingsPrice;
+    var pizzaTotalPrice = sizePrice + additionalToppingsPrice;
+    console.log(pizzaTotalPrice)
 
 // displays user input/selections and final price
     $("#finalSize").html($("#pizzaSize").val());
@@ -46,5 +66,6 @@ $(document).ready(function() {
     $("#finalAdditionalToppings").append(additionalToppings.join(", "));
     $("#totalPrice").html(this.pizzaFinalPrice);
     $("#totalPriceMessage").fadeIn();
+
   });
 });
