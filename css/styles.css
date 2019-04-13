@@ -1,10 +1,24 @@
+body {
+background-color: grey;
+background-image: url(../img/wood8.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
 #totalPriceMessage {
-  /* display: none; */
+  display: none;
+  z-index: 1;
+}
+
+button {
+  width: 40%;
+  margin-left: 30%;
+  margine-right: 30%;
 }
 
 h1 {
   font-weight: lighter;
-  font-size: 70px;
+  font-size: 50px;
   text-align: center;
 }
 
@@ -15,4 +29,35 @@ h2 {
 
 h3 {
   font-weight: lighter;
+}
+
+img {
+  border-radius: 6px;
+  opacity: .9;
+}
+
+/* container for image and output */
+#titlePic {
+  position: relative;
+  text-align: center;
+  color: black
+}
+
+.center {
+  position: absolute;
+  bottom: 2px;
+  color: black;
+  left: 80px;
+  text-align: center;
+}
+
+#pizzaForm {
+  z-index: -1;
+}
+
+.card {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
 }

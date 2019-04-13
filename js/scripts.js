@@ -20,6 +20,10 @@ PizzaPrice.prototype.selectionPrice = function() {
   return this.price
 }
 
+// function resetSelects() {
+//   $('input:checkbox').removeAttr('checked');
+// }
+
 // UI Logic
 $(document).ready(function() {
   $("#pizzaForm").submit(function(event) {
@@ -44,5 +48,7 @@ $(document).ready(function() {
     $("#finalAdditionalToppings").append(additionalToppings.join(", "));
     $(".totalPrice").html(pizzaTotalPrice);
     $("#totalPriceMessage").fadeIn();
+    $("#pizzaForm").hide();
+
   });
 });
