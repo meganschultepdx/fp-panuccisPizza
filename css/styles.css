@@ -5,10 +5,6 @@ background-size: cover;
 background-repeat: no-repeat;
 }
 
-#totalPriceMessage {
-  display: none;
-  z-index: 1;
-}
 
 button {
   width: 40%;
@@ -55,9 +51,25 @@ img {
   z-index: -1;
 }
 
+#totalPriceMessage {
+  display: none;
+  z-index: 1;
+  background: #4f040d;
+  color: lightgray;
+}
+
 .card {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   float: none;
+  background-color: #4f040d;
+  color: lightgray;
+}
+
+#placeOrder {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 20px;
 }
