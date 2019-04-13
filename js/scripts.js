@@ -49,6 +49,8 @@ $(document).ready(function() {
     $(".totalPrice").html(pizzaTotalPrice);
     $("#totalPriceMessage").fadeIn();
     $("#pizzaForm").hide();
+    // $("#secondImage").show();
+    // $("img").hide();
 
   });
 });

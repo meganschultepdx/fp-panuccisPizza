@@ -65,15 +65,18 @@
     </div>
 
     <div class="container">
+      <img src="img/dough.jpg" alt="picture of ball of dough" id="secondImage" width=90%>
       <div class="card" style="width: 35rem;">
         <div id="totalPriceMessage" class="card-body">
           <h3>Your pizza:  </h3>
           <p><strong>size:  </strong><em><span id="finalSize"></span></em><br>
           <strong>base topping:  </strong><em><span id="finalBase"></span></em><br>
           <strong>additional toppings:  </strong><em><span id="finalAdditionalToppings"></span></em><br>
-          <strong>Your total for this pizza selection is:  </strong><em>$<span class="totalPrice">.</em><br>
+          <strong>Your total for this pizza selection is:  </strong><em>$<span class="totalPrice">.</em><br><br>
           Click the "checkout" button to go to online ordering. </p>
-          <button type="button" class="btn btn-dark">Checkout</button>
+          <form>
+            <input type="button" class="btn btn-dark" value="go to checkout"  onclick="window.location.href='index2.html'" />
+          </form>
         </div>
       </div>
     </div>

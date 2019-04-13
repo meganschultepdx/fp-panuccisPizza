@@ -2,14 +2,16 @@ body {
 background-color: grey;
 background-image: url(../img/wood8.jpg);
 background-size: cover;
-background-repeat: no-repeat;
+background-repeat: repeat;
 }
 
-
+/* first order submit button */
 button {
   width: 40%;
   margin-left: 30%;
   margine-right: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -28,11 +30,11 @@ h3 {
 }
 
 img {
-  border-radius: 6px;
+  border-radius: 50px;
   opacity: .9;
 }
 
-/* container for image and output */
+/* container for header and header image */
 #titlePic {
   position: relative;
   text-align: center;
@@ -58,6 +60,13 @@ img {
   color: lightgray;
 }
 
+#secondImage {
+  display: none;
+  border-radius: 50px;
+  opacity: .9;
+  margin-left: 5%;
+}
+
 .card {
   margin-top: 10px;
   margin-left: auto;
@@ -65,6 +74,7 @@ img {
   float: none;
   background-color: #4f040d;
   color: lightgray;
+  opacity: .8;
 }
 
 #placeOrder {
