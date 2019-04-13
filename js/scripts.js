@@ -6,8 +6,8 @@ function PizzaPrice(size, baseTopping, additionalToppings) {
   this.price = 0;
 
 }
-//sizePrice function
-PizzaPrice.prototype.sizePrice = function() {
+//selectionPrice function
+PizzaPrice.prototype.selectionPrice = function() {
   if (this.size === "small") {
     this.price += 10;
   } else {
@@ -19,24 +19,6 @@ PizzaPrice.prototype.sizePrice = function() {
     }
   return this.price
 }
-// // baseToppingPrice function
-// PizzaPrice.prototype.baseToppingPrice = function() {
-//   if (this.baseTopping === "cheese") {
-//     this.price += 0;
-//   } else {
-//     this.price += 4;
-//   }
-//   return this.price
-// }
-
-//additionalToppingsPrice function
-//I left this in because I couldn't figure out the right way to do this up here and I would like to talk to you guys about it. I'm not sure how to make the value of the array I made from the inputted checked boxes register in my busines logic this.additionalToppings. I even tried changing it to this.additionalToppings = additonalToppings;
-
-// PizzaPrice.prototype.additionalToppingsPrice = function() {
-//   this.price += this.additionalToppings.length;
-// }
-// console.log(this.additionalToppingsPrice)
-
 
 // UI Logic
 $(document).ready(function() {
@@ -48,23 +30,19 @@ $(document).ready(function() {
     var additionalToppings = [];
     $('.additional input:checked').each(function() {
       additionalToppings.push($(this).val());
-    }); //console.log(additionalToppings)
+    });
   //new pizza variable
     var finalSelection = new PizzaPrice(size, baseTopping, additionalToppings);
-
-    var pizzaTotalPrice = this.price + additionalToppings.length;
-
-    var sizePrice = finalSelection.sizePrice();
-    // var baseToppingPrice = finalSelection.baseToppingPrice();
+    var selectionPrice = finalSelection.selectionPrice();
     var additionalToppingsPrice = additionalToppings.length;
-    var pizzaTotalPrice = sizePrice + additionalToppingsPrice;
+    var pizzaTotalPrice = selectionPrice + additionalToppingsPrice;
     console.log(pizzaTotalPrice)
 
 // displays user input/selections and final price
     $("#finalSize").html($("#pizzaSize").val());
     $("#finalBase").html($("#baseTopping").val());
     $("#finalAdditionalToppings").append(additionalToppings.join(", "));
-    $("#totalPrice").html(this.pizzaFinalPrice);
+    $(".totalPrice").html(pizzaTotalPrice);
     $("#totalPriceMessage").fadeIn();
 
   });
