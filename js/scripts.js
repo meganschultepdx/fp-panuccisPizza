@@ -43,7 +43,7 @@ $(document).ready(function() {
     console.log(pizzaTotalPrice)
 
 // displays user input/selections and final price
-    $("#finalSize").html($("#pizzaSize").val());
+    $("#finalSize").html($("#size").val());
     $("#finalBase").html($("#baseTopping").val());
     $("#finalAdditionalToppings").append(additionalToppings.join(", "));
     $(".totalPrice").html(pizzaTotalPrice);
