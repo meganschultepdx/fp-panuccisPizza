@@ -1,14 +1,12 @@
 // Busines Logic
-function PizzaPrice(pizzaSize, baseTopping) {
-  this.pizzaSize = pizzaSize;
+function PizzaPrice(size, baseTopping, additionaToppings) {
+  this.size = size;
   this.baseTopping = baseTopping;
   this.additionalToppings = [];
-  this.price = 0;
 }
-
-//sizePrice function
-PizzaPrice.prototype.pizzaSizePrice = function() {
-  if (this.pizzaSize === "small") {
+//size Price function
+PizzaPrice.prototype.sizePrice = function() {
+  if (this.size === "small") {
     return 10;
   } else {
     return 14;
@@ -28,15 +26,16 @@ $(document).ready(function() {
   $("#pizzaForm").submit(function(event) {
     event.preventDefault();
 
-    var pizzaSize = $("#pizzaSize").val();
+    var size = $("#size").val();
     var baseTopping = $("#baseTopping").val();
     var additionalToppings = [];
-    $("#additionaToppings input:checked").each(function(){
-        additionalToppings.push($(this).val());
-      });
-    var pizzaSelection = new PizzaPrice(pizzaSize, baseTopping, additionalToppings);
+    $('.additional input:checked').each(function() {
+      additionalToppings.push($(this).val());
+    }); console.log(additionalToppings)
 
-    var sizePrice = pizzaSelection.pizzaSizePrice();
+    var pizzaSelection = new PizzaPrice(size, baseTopping, additionalToppings);
+
+    var sizePrice = pizzaSelection.sizePrice();
     var baseToppingPrice = pizzaSelection.baseToppingPrice();
     var additionalToppingsPrice = additionalToppings.length;
     var pizzaTotalPrice = sizePrice + baseToppingPrice + additionalToppingsPrice;
