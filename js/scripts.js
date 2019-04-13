@@ -31,7 +31,7 @@ $(document).ready(function() {
     $('.additional input:checked').each(function() {
       additionalToppings.push($(this).val());
     });
-  //new pizza variable
+  //new pizza variable, price variable and total order price
     var finalSelection = new PizzaPrice(size, baseTopping, additionalToppings);
     var selectionPrice = finalSelection.selectionPrice();
     var additionalToppingsPrice = additionalToppings.length;
@@ -44,6 +44,5 @@ $(document).ready(function() {
     $("#finalAdditionalToppings").append(additionalToppings.join(", "));
     $(".totalPrice").html(pizzaTotalPrice);
     $("#totalPriceMessage").fadeIn();
-
   });
 });
